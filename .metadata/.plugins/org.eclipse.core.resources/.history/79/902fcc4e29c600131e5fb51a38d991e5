@@ -1,0 +1,115 @@
+package com.example.network;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
+import android.view.View.OnKeyListener;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.inputmethodservice.KeyboardView.OnKeyboardActionListener;
+
+
+
+import android.os.AsyncTask;
+
+	
+public class BackgroundTask extends AsyncTask<String, String, String> {
+		 @Override
+		      protected String doInBackground(String... arg0) {
+		    try {
+		 //10.0.2.2 -- localhost 	
+		    	//EditText text = (EditText)findViewById(R.id.EditText01); 
+				
+				String ipcadd;
+				String x;
+				String y;
+				String z;
+				String lelo;
+
+		    	ipcadd = "192.168.1.2";
+				 
+				//if(Boolean.valueOf(arg0[3]))
+					//msg = arg0[3].toString();
+				//else
+				//{
+					//EditText text2 = (EditText)findViewById(R.id.editText1); 
+					//msg = text2.getText().toString();
+				//}
+				
+		
+				
+				x = arg0[0].toString();
+				y = arg0[1].toString();
+				z = arg0[2].toString();
+				
+				
+		    Socket client = new Socket(ipcadd, 4420);  //connect to server
+		     PrintWriter printwriter = new PrintWriter(client.getOutputStream(),true);
+		    
+				/*if(z == "0")
+				{
+					lelo = arg0[3].toString();
+					 printwriter.write(x+"@");
+				     printwriter.write(y+"@");
+				     printwriter.write(z+"@");
+				     printwriter.write(lelo+"@");
+				}
+		     */
+		     
+		     printwriter.write("0"+"@");
+		     printwriter.write("0"+"@");
+		     printwriter.write("2"+"@");
+		     //printwriter.write(msg);
+		     //printwriter.write("500");//write the message to output stream
+		 
+		     printwriter.flush();
+		     printwriter.close();
+		     client.close();   //closing the connection
+		 
+		    } catch (UnknownHostException e) {
+		    		e.printStackTrace();
+		    } catch (IOException e) {
+		     e.printStackTrace();
+		    }
+		    return null;
+		   }
+}
+		  
+		  
+
