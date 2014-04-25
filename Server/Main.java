@@ -38,7 +38,7 @@ public class Main
     private static String message;
     private static OutputStream objOut;
 
-		 
+         
     public static void main(String[] args) throws Exception
     {
         int foo;
@@ -75,6 +75,7 @@ public class Main
                 objOut = clientSocket.getOutputStream();
                 bufferedReader = new BufferedReader(inputStreamReader); //get the client message
                 String message = bufferedReader.readLine();
+                System.out.println(message);
                 String[] splited = message.split("@");// x, y, z, text
                 x = splited[0];
                 y = splited[1];
@@ -216,6 +217,22 @@ public class Main
                         };
                         
                         new Thread(r).start();
+                    break;
+                    case 8:
+                        System.out.println("Signal : Voice");
+                        try
+                        {
+                        
+                            text = splited[3];
+                            System.out.println("Voice Command Signal Recieved : " + splited[3] + "  ");
+                            //@vishal = "text" variable contains the word for voice command do your stuff here
+                        
+                        }
+                        catch(Exception e)
+                        {
+                            System.out.println(e);
+                        } 
+
                     break;
 
 
