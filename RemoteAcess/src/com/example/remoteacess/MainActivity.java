@@ -31,7 +31,7 @@ import com.example.network.Background;
 
 public class MainActivity extends Activity {
 	
-	CharSequence cs[] = { "Keyboard", "Live Screen", "Send File" };
+	CharSequence cs[] = { "Keyboard", "Live Screen", "Voice" };
 	   
 	OnClickListener leftEvent = new OnClickListener() {
 	        public void onClick(View v) {
@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
 	            	    	break;
 
 	                    case 2://Send File
-	                       // Logic goes here
+                			startActivity(new Intent(getBaseContext(), Voice.class));
 	                        break;
 	                    }
 	                }

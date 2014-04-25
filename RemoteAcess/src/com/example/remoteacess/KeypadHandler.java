@@ -20,7 +20,8 @@ public class KeypadHandler implements OnKeyListener{
 		case KeyEvent.ACTION_MULTIPLE:
 			if (keyCode == KeyEvent.KEYCODE_UNKNOWN)
 			{
-				//Do Nothing
+				//Background task = new Background();
+				//task.execute("multiple","0",event.getCharacters());
 			}
 			else
 			{

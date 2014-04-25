@@ -24,7 +24,10 @@
             </intent-filter>
         </activity>
             <activity
-            android:name="com.example.remoteacess.Screen"
+            android:name="com.example.remoteacess.Screen" android:screenOrientation="landscape"
+            />
+            <activity
+            android:name="com.example.remoteacess.Voice" android:screenOrientation="landscape"
             />
     </application>
 

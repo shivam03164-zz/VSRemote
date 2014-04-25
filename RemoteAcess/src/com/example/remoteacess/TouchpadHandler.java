@@ -1,6 +1,8 @@
 package com.example.remoteacess;
 
 import com.example.network.NetInput;
+import com.example.network.Background;
+
 
 import android.view.MotionEvent;
 import android.view.View;
@@ -8,6 +10,8 @@ import android.view.View.OnTouchListener;
 
 public class TouchpadHandler implements OnTouchListener {
 	float lastX, lastY, lastScrollY, originX, originY;
+	String x;
+	String y;
 	long touchDown;
 	boolean multiEvent, dragging, strayedOrigin;
 	
@@ -23,6 +27,7 @@ public class TouchpadHandler implements OnTouchListener {
 				NetInput.LeftDown();
 			}
 		}
+		 Background taski = new Background();
 		switch (event.getAction())
 		{
 		case MotionEvent.ACTION_DOWN:
@@ -50,12 +55,20 @@ public class TouchpadHandler implements OnTouchListener {
 			break;
 			
 		case MotionEvent.ACTION_MOVE:
-			float xOffset = event.getX();//(event.getX() - lastX);
-			float yOffset = event.getY();//(event.getY() - lastY);
-			lastX = event.getX();
+			
+			 x = String.valueOf((int) event.getX());
+             y = String.valueOf((int) event.getY());
+            
+           
+	         	taski.execute(x,y,"3");
+			
+			/*float xOffset = (event.getX() - lastX);//event.getX();
+			float yOffset = (event.getY() - lastY);//event.getY();
+			lastX =  event.getX();
 			lastY = event.getY();
 			if (event.getPointerCount() == 1) {
-			NetInput.MoveMouse((int)(xOffset) , (int)(yOffset ));
+			//NetInput.MoveMouse((int)(xOffset) , (int)(yOffset ));
+			NetInput.MoveMouse((int)(xOffset), (int)(yOffset));
 			} else { //2 or more touches down
 				if (lastScrollY ==0) {
 					lastScrollY = lastY;
@@ -68,7 +81,7 @@ public class TouchpadHandler implements OnTouchListener {
 						lastScrollY = lastY;
 					}
 				}
-			}
+			}*/
 			break;
 		}
 		return true;
