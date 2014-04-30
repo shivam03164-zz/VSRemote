@@ -18,7 +18,7 @@ import android.os.AsyncTask;
 				String z;
 				String lelo;
 
-		    	ipcadd = "172.17.91.166";
+		    	ipcadd = "192.168.1.8";
 				 
 				x = arg0[0].toString();
 				y = arg0[1].toString();
@@ -28,7 +28,7 @@ import android.os.AsyncTask;
 				Socket client = new Socket(ipcadd, 4420);  //connect to server
 				PrintWriter printwriter = new PrintWriter(client.getOutputStream(),true);
 		    
-				if(z == "0" || z == "8")//if keyboard or voice message
+				if(z == "0" || z == "8")//if keyboard message
 				{
 					 lelo = arg0[3].toString();
 					 printwriter.write(x+"@");

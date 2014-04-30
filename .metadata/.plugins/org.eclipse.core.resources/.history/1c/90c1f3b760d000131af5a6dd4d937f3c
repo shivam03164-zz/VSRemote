@@ -31,10 +31,10 @@ import android.os.AsyncTask;
 				if(z == "0" || z == "8")//if keyboard or voice message
 				{
 					 lelo = arg0[3].toString();
-					 printwriter.write(x+"@");
-				     printwriter.write(y+"@");
-				     printwriter.write(z+"@");
-				     printwriter.write(lelo+"@");
+					 printwriter.write(x+"?");
+				     printwriter.write(y+"?");
+				     printwriter.write(z+"?");
+				     printwriter.write(lelo+"?");
 				}
 		     
 				else// for mouse message

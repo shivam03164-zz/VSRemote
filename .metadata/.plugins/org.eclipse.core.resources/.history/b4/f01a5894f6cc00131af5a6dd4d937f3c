@@ -59,7 +59,7 @@ public class Screen extends Activity {
 		protected Void doInBackground(Void... params) {
 			// TODO Auto-generated method stub
 			try {
-					Socket socket = new Socket("172.17.91.166", 4420);
+					Socket socket = new Socket("192.168.1.8", 4420);
 					OutputStream outToServer = socket.getOutputStream();
 	                DataOutputStream out = new DataOutputStream(outToServer);
 	                InputStream inputStream = socket.getInputStream();

@@ -18,7 +18,7 @@ import android.os.AsyncTask;
 				String z;
 				String lelo;
 
-		    	ipcadd = "172.17.91.166";
+		    	ipcadd = "192.168.1.5";
 				 
 				x = arg0[0].toString();
 				y = arg0[1].toString();
